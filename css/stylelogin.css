@@ -10,7 +10,7 @@ html {
     overflow-y: scroll;
 }
 
-body {
+.bodyimage {
     font-family: 'Titillium Web', sans-serif;
     background-image: url("bicicleta_login.jpg");
     background-size: cover;
@@ -79,9 +79,9 @@ a {
 
 h1 {
     text-align: center;
-    color: white;
+    color: rgb(0, 0, 0);
     font-weight: thin;
-    margin: 0 0 40px;
+    
 }
 
 label {
@@ -188,4 +188,102 @@ textarea {
 .forgot {
     margin-top: -20px;
     text-align: right;
+}
+
+.wrapper {
+    display: flex;
+    width: 90%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: stretch;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin: auto;
+}
+
+.wrapper-productos{
+    display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: space-around;
+        justify-content: flex-start;
+}
+
+.productos {
+    width: 620px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 35px;
+    margin-bottom: 10px;
+    height: 150px;
+}
+.carrito {
+    width: 30%;
+    height: 10%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+}
+.producto-item {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: stretch;
+}
+.producto-item span {
+    margin-right: 10px;
+}
+.botones {
+    display: flex;
+    gap: 5px;
+}
+.boton {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    cursor: pointer;
+
+}
+.boton:hover {
+    background-color: #e0e0e0;
+}
+.total {
+    font-weight: bold;
+    text-align: left;
+    margin-top: 20px;
+}
+.boton-pagar {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 120px;
+    height: 30px;
+    margin-left: 50%;
+    margin-top: 15px;
+    transition-duration: 0.4s;
+}
+.boton-pagar:hover {
+    background-color: #c5c0c0;
+}
+
+.producto-titulo{
+    text-align: center;
+}
+
+.specs-title{
+    text-align: center;
+}
+
+#imgcarrito{
+    width: 100px;
+    height: 100px;
+    margin-left: 15px;
+    padding-bottom: 15px;
 }
