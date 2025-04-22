@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_SESSION['usuario'])) {
+    header("Location: login.html");
+    exit();
+}
 include 'conexion.php';
 
 $query = "SELECT * FROM bicicletas";
