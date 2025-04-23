@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
 $user = "root";
-$pass = "Alpha890,";
+$pass = "123456";
 $db = "pura_cleta_cr";
 
 $conn = new mysqli($host, $user, $pass, $db);
