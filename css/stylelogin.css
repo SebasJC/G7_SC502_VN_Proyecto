@@ -253,12 +253,9 @@ textarea {
 .wrapper {
     display: flex;
     width: 90%;
-    flex-direction: row;
     flex-wrap: nowrap;
-    align-content: stretch;
-    justify-content: flex-start;
-    align-items: stretch;
     margin: auto;
+    flex-direction: row;
 }
 
 .wrapper-productos {

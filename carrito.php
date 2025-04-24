@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito - PuraCleta</title>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/carritoScript.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/stylelogin.css" rel="stylesheet">
 
@@ -44,113 +46,16 @@
     </header>
     <main class="container py-5">
         <div class="wrapper">
-            <div class="wrapper-productos">
-            <div class="productos">
-                <h4 class="producto-titulo">BICICLETA 1</h4>
-
-                    <div class="producto-item">
-                        <img src="imagenes/bicicleta_urbana.jpg" alt="Bicicleta 1" id="imgcarrito">
-                        <div>
-                            <p class="specs-title">Cantidad</p>
-                            <div class="botones">
-                                <button class="boton">-</button>
-                                <p>1</p>
-                                <button class="boton">+</button>
-                            </div>
-                        </div>
-                        <div>
-                            <p>Precio</p>
-                            <div class="botones">
-                                <p>₡2.600</p>
-                            </div>
-                        </div>
-                        <div>
-                            <p>Total</p>
-                            <div class="botones">
-                                <p>₡2.600</p>
-                            </div>
-                        </div>
-
-                    </div>
-            </div>
-            <div class="productos">
-                <h4 class="producto-titulo">BICICLETA 2</h4>
-
-                    <div class="producto-item">
-                        <img src="imagenes/bicicleta_urbana.jpg" alt="Bicicleta 1" id="imgcarrito">
-                        <div>
-                            <p class="specs-title">Cantidad</p>
-                            <div class="botones">
-                                <button class="boton">-</button>
-                                <p>1</p>
-                                <button class="boton">+</button>
-                            </div>
-                        </div>
-                        <div>
-                            <p>Precio</p>
-                            <div class="botones">
-                                <p>₡2.600</p>
-                            </div>
-                        </div>
-                        <div>
-                            <p>Total</p>
-                            <div class="botones">
-                                <p>₡2.600</p>
-                            </div>
-                        </div>
-
-                    </div>
-            </div>
-            <div class="productos">
-                <h4 class="producto-titulo">BICICLETA 3</h4>
-
-                    <div class="producto-item">
-                        <img src="imagenes/bicicleta_urbana.jpg" alt="Bicicleta 1" id="imgcarrito">
-                        <div>
-                            <p class="specs-title">Cantidad</p>
-                            <div class="botones">
-                                <button class="boton">-</button>
-                                <p>1</p>
-                                <button class="boton">+</button>
-                            </div>
-                        </div>
-                        <div>
-                            <p>Precio</p>
-                            <div class="botones">
-                                <p>₡2.600</p>
-                            </div>
-                        </div>
-                        <div>
-                            <p>Total</p>
-                            <div class="botones">
-                                <p>₡2.600</p>
-                            </div>
-                        </div>
-
-                    </div>
-            </div>
+            <div class="wrapper-productos" id="carritoList">
+            
+ 
         </div>
             <div class="carrito">
                 <h4 style="text-align: center;">Su compra final</h4>
-                <div class="producto">
-                    <span>1 |</span>
-                    <span>Bicicleta 1 </span>
-                    <span style="margin-left: 40%;">₡2.600</span>
-                </div>
-                <div class="producto">
-                    <span>1 |</span>
-                    <span>Bicicleta 1 </span>
-                    <span style="margin-left: 40%;">₡2.600</span>
-                </div>
-                <div class="producto">
-                    <span>1 |</span>
-                    <span>Bicicleta 1 </span>
-                    <span style="margin-left: 40%;">₡2.600</span>
-                </div>
-                <div class="total">
-                    <span>Subtotal: </span>
-                    <span style="margin-left: 47%;">₡7.800</span>
-                </div>
+                <div id="totalList"></div>
+                
+
+                <div id="total"></div>
                 <button class="boton-pagar">Pagar</button>
             </div>
         </div>
