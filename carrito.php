@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['usuario'])) {
+    header("Location: login.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -40,7 +49,8 @@
                 <a href="index.php" class="me-3 text-decoration-none">Inicio</a>
                 <a href="catalogo.php" class="me-3 text-decoration-none">Catálogo</a>
                 <a href="carrito.php" class="me-3 text-decoration-none">Carrito</a>
-                <a href="compras.php" class="text-decoration-none">Mis Compras</a>
+                <a href="compras.php" class="me-3 text-decoration-none">Mis Compras</a>
+                <a href="logout.php" class="me-3 text-decoration-none">Cerrar sesión</a>
             </nav>
         </div>
     </header>
