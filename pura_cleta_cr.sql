@@ -22,19 +22,9 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `alquileres`
---
-
-CREATE TABLE `alquileres` (
-  `id` int(11) NOT NULL,
-  `bicicleta_id` int(11) NOT NULL,
-  `fecha_alquiler` timestamp NOT NULL DEFAULT current_timestamp(),
-  `dias` int(11) DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
+-- Crear la base de datos si no existe y seleccionarla
+CREATE DATABASE IF NOT EXISTS `pura_cleta_cr` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `pura_cleta_cr`;
 
 --
 -- Estructura de tabla para la tabla `bicicletas`
@@ -84,10 +74,10 @@ CREATE TABLE `carrito` (
 
 CREATE TABLE `compras` (
   `id` int(11) NOT NULL,
-  `bicicleta_id` int(11) NOT NULL,
-  `cantidad` int(11) NOT NULL,
-  `fecha` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `nombre` varchar(300) NOT NULL,
+  `precio` decimal(10,0) NOT NULL,
+  `imagen` varchar(300) NOT NULL
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -112,13 +102,6 @@ CREATE TABLE `usuarios` (
 --
 
 --
--- Indices de la tabla `alquileres`
---
-ALTER TABLE `alquileres`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `bicicleta_id` (`bicicleta_id`);
-
---
 -- Indices de la tabla `bicicletas`
 --
 ALTER TABLE `bicicletas`
@@ -134,8 +117,7 @@ ALTER TABLE `carrito`
 -- Indices de la tabla `compras`
 --
 ALTER TABLE `compras`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `bicicleta_id` (`bicicleta_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -147,12 +129,6 @@ ALTER TABLE `usuarios`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
-
---
--- AUTO_INCREMENT de la tabla `alquileres`
---
-ALTER TABLE `alquileres`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `bicicletas`
@@ -188,12 +164,6 @@ ALTER TABLE `usuarios`
 ALTER TABLE `alquileres`
   ADD CONSTRAINT `alquileres_ibfk_1` FOREIGN KEY (`bicicleta_id`) REFERENCES `bicicletas` (`id`);
 
---
--- Filtros para la tabla `compras`
---
-ALTER TABLE `compras`
-  ADD CONSTRAINT `compras_ibfk_1` FOREIGN KEY (`bicicleta_id`) REFERENCES `bicicletas` (`id`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

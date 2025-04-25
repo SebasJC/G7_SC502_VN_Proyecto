@@ -8,12 +8,16 @@ try {
         $data = json_decode(file_get_contents("php://input"), true);
         $action = $data['action'] ?? '';
 
+        // Manejo único de todas las acciones POST
         if ($action === 'delete' && !empty($data['id'])) {
             echo json_encode(Task::delete($data['id']));
+        } elseif ($action === 'transferirCarritoACompras') {
+            echo json_encode(Task::transferirCarritoACompras());
         } else {
             throw new Exception("Acción no válida o parámetros incorrectos.");
         }
     } else {
+        // Para métodos GET, simplemente devolvemos todos los items del carrito
         echo json_encode(Task::getAll());
     }
 } catch (Exception $e) {

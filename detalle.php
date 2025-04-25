@@ -68,8 +68,8 @@ $bicicleta = $resultado->fetch_assoc();
       <nav>
         <a href="index.php" class="me-3 text-decoration-none">Inicio</a>
         <a href="catalogo.php" class="me-3 text-decoration-none">Catálogo</a>
-        <a href="perfil.php" class="text-decoration-none">Perfil</a>
-        <a href="carrito.php" class="text-decoration-none">Carrito</a>
+        <a href="carrito.php" class="me-3 text-decoration-none">Carrito</a>
+        <a href="compras.php" class="text-decoration-none">Mis Compras</a>
       </nav>
     </div>
   </header>
@@ -86,7 +86,6 @@ $bicicleta = $resultado->fetch_assoc();
             <div style="display: flex;"><h5>₡</h5><h5 id="precio" class="precio"><?= htmlspecialchars($bicicleta['precio']) ?></h5></div>
         <div class="d-flex gap-2">
           <button id="comprar" class="btn btn-success">Comprar</button>
-          <button id="rentar" class="btn btn-outline-primary">Rentar</button>
         </div>
       </div>
     </div>

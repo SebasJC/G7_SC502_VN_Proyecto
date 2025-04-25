@@ -37,10 +37,10 @@
         <div class="container d-flex justify-content-between align-items-center">
             <h1 class="h4 m-0">PuraCleta</h1>
             <nav>
-            <a href="index.php" class="me-3 text-decoration-none">Inicio</a>
-        <a href="catalogo.php" class="me-3 text-decoration-none">Catálogo</a>
-        <a href="perfil.php" class="text-decoration-none">Perfil</a>
-        <a href="carrito.php" class="text-decoration-none">Carrito</a>
+                <a href="index.php" class="me-3 text-decoration-none">Inicio</a>
+                <a href="catalogo.php" class="me-3 text-decoration-none">Catálogo</a>
+                <a href="carrito.php" class="me-3 text-decoration-none">Carrito</a>
+                <a href="compras.php" class="text-decoration-none">Mis Compras</a>
             </nav>
         </div>
     </header>
@@ -56,7 +56,7 @@
                 
 
                 <div id="total"></div>
-                <button class="boton-pagar">Pagar</button>
+                <button class="boton-pagar" id="btnPagar">Pagar</button>
             </div>
         </div>
     </main>
@@ -64,6 +64,7 @@
     <footer class="py-3 border-top text-center">
         <small>&copy; 2025 PuraCleta - Promoviendo la salud en Costa Rica</small>
     </footer>
+    <script src="js/pagarCarrito.js"></script>
 </body>
 
 </html>
