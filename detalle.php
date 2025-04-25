@@ -1,6 +1,13 @@
 <?php
 include 'bdd/conexion.php';
 
+session_start();
+
+if (!isset($_SESSION['usuario'])) {
+    header("Location: login.php");
+    exit();
+}
+
 if (!isset($_GET['id'])) {
     echo "ID de bicicleta no especificado.";
     exit;
@@ -69,7 +76,8 @@ $bicicleta = $resultado->fetch_assoc();
         <a href="index.php" class="me-3 text-decoration-none">Inicio</a>
         <a href="catalogo.php" class="me-3 text-decoration-none">Catálogo</a>
         <a href="carrito.php" class="me-3 text-decoration-none">Carrito</a>
-        <a href="compras.php" class="text-decoration-none">Mis Compras</a>
+        <a href="compras.php" class="me-3 text-decoration-none">Mis Compras</a>
+        <a href="logout.php" class="me-3 text-decoration-none">Cerrar sesión</a>
       </nav>
     </div>
   </header>

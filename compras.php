@@ -1,6 +1,13 @@
 <?php
 include 'bdd/conexion.php';
 
+session_start();
+
+if (!isset($_SESSION['usuario'])) {
+    header("Location: login.php");
+    exit();
+}
+
 $compras = [];
 $query = "SELECT * FROM compras ORDER BY id DESC";
 $resultado = $conn->query($query);
@@ -39,7 +46,8 @@ if ($resultado->num_rows > 0) {
                 <a href="index.php" class="me-3 text-decoration-none">Inicio</a>
                 <a href="catalogo.php" class="me-3 text-decoration-none">Catálogo</a>
                 <a href="carrito.php" class="me-3 text-decoration-none">Carrito</a>
-                <a href="compras.php" class="text-decoration-none">Mis Compras</a>
+                <a href="compras.php" class="me-3 text-decoration-none">Mis Compras</a>
+                <a href="logout.php" class="me-3 text-decoration-none">Cerrar sesión</a>
             </nav>
         </div>
     </header>
