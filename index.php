@@ -35,15 +35,6 @@ $resultado = $conn->query($query);
     </div>
   </header>
 
-  <!-- Body 
-  <main class="container py-5">
-    <div class="text-center">
-      <h2 class="mb-4">Bienvenido a PuraCleta</h2>
-      <p class="lead">Compra o renta bicicletas y empieza un estilo de vida saludable.</p>
-      <a href="catalogo.html" class="btn btn-primary mt-3">Explorar Catálogo</a>
-    </div>
-  </main>-->
-
   <div class="container my-5">
     <h1 class="text-center mb-4">Catálogo de Bicicletas - Pura Cleta CR</h1>
     <div class="row">

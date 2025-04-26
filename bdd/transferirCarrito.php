@@ -1,8 +1,13 @@
 <?php
+header('Content-Type: application/json');
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 include("conexion.php");
+
 $data = json_decode(file_get_contents("php://input"), true);
 
-if ($data["action"] ?? '' == "pagar") {
+if ($data["action"] ?? '' === "pagar") {
     // 1. Copiar todo a compras
     $query = "INSERT INTO compras (nombre, precio, imagen) SELECT nombre, precio, imagen FROM carrito";
     

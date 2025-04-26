@@ -1,30 +1,23 @@
-
-$(function () {
-
-    $("#comprar").on("click", function () {
-        fetch("bdd/insertarCarrito.php", {
-            method: 'post',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                nombre: $("#nombre").text(),
-                precio: $("#precio").text(),
-                imagen: $("#imagen").attr("src")
-            })
-        }).then(response => response.json())
-            .then(data => {
-                if (data.status == "00") {
-                    alert("Se ha agregado su compra al carrito");
-                } else {
-                    alert("Ocurrio un error agregando la compra");
-                }
-            });
-
-
-
-    })
-
-});
-
-
+$(document).ready(function () {
+    $('#comprar').click(function () {
+      const nombre = $('#nombre').text();
+      const precio = $('#precio').text();
+      const imagen = $('#imagen').attr('src');
+  
+      $.ajax({
+        url: 'bdd/insertarCarrito.php',
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({ nombre, precio, imagen }),
+        success: function (response) {
+          alert(response.message);
+          if (response.status === "00") {
+            window.location.href = "carrito.php";
+          }
+        },
+        error: function () {
+          alert("Error al intentar agregar al carrito.");
+        }
+      });
+    });
+  });
