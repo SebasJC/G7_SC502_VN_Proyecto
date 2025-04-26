@@ -5,6 +5,12 @@ if (!isset($_SESSION['usuario'])) {
     header("Location: login.php");
     exit();
 }
+
+include 'bdd/conexion.php';
+
+$query = "SELECT * FROM carrito";
+$resultado = $conn->query($query);
+$carrito_vacio = ($resultado->num_rows == 0);
 ?>
 
 <!DOCTYPE html>
@@ -55,10 +61,12 @@ if (!isset($_SESSION['usuario'])) {
         </div>
     </header>
     <main class="container py-5">
+        <h2>Tu carrito</h2>
+        <?php if ($carrito_vacio): ?>
+        <p>No hay productos en el carrito.</p>
+        <?php else: ?>
         <div class="wrapper">
             <div class="wrapper-productos" id="carritoList">
-            
- 
         </div>
             <div class="carrito">
                 <h4 style="text-align: center;">Su compra final</h4>
@@ -69,6 +77,7 @@ if (!isset($_SESSION['usuario'])) {
                 <button class="boton-pagar" id="btnPagar">Pagar</button>
             </div>
         </div>
+    <?php endif; ?>
     </main>
 
     <footer class="py-3 border-top text-center">
